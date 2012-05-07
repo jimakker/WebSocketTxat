@@ -89,13 +89,13 @@ color:#000;
 <script>
 initTxat();
 
-	$j('#chat-form').submit(function() {
+	$('#chat-form').submit(function() {
 		if(barruan){
-			if($j('#chatMsg').val()){
+			if($('#chatMsg').val()){
 				sendChat();
 			}
 		} else {
-			if($j('#chatMsg').val()){
+			if($('#chatMsg').val()){
 				sendKaixoMessage();
 				
 	
@@ -107,6 +107,6 @@ initTxat();
 </script>
 
 <div id="txat-bar" style="left:0;z-index:999;background: none repeat scroll 0 0 #333333;bottom: 0;position: fixed;width: 100%;height:30px;">
-<div id="txat-button-visual" style="color:#000;background:#ccc;width:200px;float:right;height:30px;cursor:pointer;" onclick="$j('#txat-wrapper').slideToggle();noReadMsg=0;$j('#txat-button-visual .txat-button-count').html('');document.title=initialPageTitle;"><span style="font-size: 20px;padding: 5px;float: left;"><img src="http://ttanttakun.com/js/txat/comments.png"/> Txat</span><span class="txat-button-count"></span></div>
+<div id="txat-button-visual" style="color:#000;background:#ccc;width:200px;float:right;height:30px;cursor:pointer;" onclick="$j('#txat-wrapper').slideToggle();noReadMsg=0;$j('#txat-button-visual .txat-button-count').html('');document.title=initialPageTitle;"><span style="font-size: 20px;padding: 5px;float: left;"><img src="comments.png"/> Txat</span><span class="txat-button-count"></span></div>
 </div>
 
