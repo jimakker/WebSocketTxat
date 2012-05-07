@@ -1,0 +1,112 @@
+<script src="http://[ip]:[port]/socket.io/socket.io.js"></script>
+<script src="jquery.js"></script>
+<script src="jquery.cssemoticons.min.js"></script>
+
+ <link href="jquery.cssemoticons.css" rel="stylesheet">
+<script src="moment.min.js"></script>
+<script src="eu.js"></script>
+  <script src="txat_client.js"></script>
+<style>
+.mine {
+background:#ccffce;
+}
+
+
+#txat-wrapper{
+display:none;
+position:fixed;
+bottom:30px;
+width:300px;
+height:510px;
+right:5px;
+border:1px solid #ccc;
+background:#fff;
+z-index:999;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
+
+#txat-wrapper .date{
+	font-size:x-small;
+	
+	color:#333;
+	float:right;
+
+}
+
+.txat-user{
+	
+	font-size:x-small;" 
+	color:#000!important;
+	font-weight:bold;
+	float:left;
+}
+
+.txat-msg{
+	color:#000;
+	display:block;
+	font-size:small;
+
+}
+
+#txat-sarrera-testua{
+	display: block;
+background: lightSteelBlue;
+height: 15px;
+font-weight: bold;
+text-shadow: 1px 1px 1px white;
+padding: 5px;
+font-size: 16px;
+}
+
+
+#chat-ul {
+list-style: none outside none;
+margin: 0;
+padding:3px;
+border:1px solid #ccc;
+overflow-y:scroll;
+height:400px;
+color:#000;
+}
+
+</style>
+
+
+<div id="txat-wrapper">
+<ul style="" id="chat-ul"> 
+
+
+</ul>
+<span id="txat-sarrera-testua">Sortu erabiltzailea berri bat edo sartu!</span>
+<form style="margin-top:5px;" class="" id="chat-form">
+<input type="text" placeholder="Erabiltzailea" style="width:75%;height:28px;margin-bottom:0px;" id="chatMsg" class="">
+<input type="password" placeholder="Pasahitza" style="width:75%;height:28px;margin-bottom:0px;" id="chatPwd" class="">
+<input type="submit" value="Sartu!" class="btn" id="chatBidaliBotoia">
+
+</form>
+</div>
+<script>
+initTxat();
+
+	$j('#chat-form').submit(function() {
+		if(barruan){
+			if($j('#chatMsg').val()){
+				sendChat();
+			}
+		} else {
+			if($j('#chatMsg').val()){
+				sendKaixoMessage();
+				
+	
+			}
+		}
+	
+		return false;
+	});
+</script>
+
+<div id="txat-bar" style="left:0;z-index:999;background: none repeat scroll 0 0 #333333;bottom: 0;position: fixed;width: 100%;height:30px;">
+<div id="txat-button-visual" style="color:#000;background:#ccc;width:200px;float:right;height:30px;cursor:pointer;" onclick="$j('#txat-wrapper').slideToggle();noReadMsg=0;$j('#txat-button-visual .txat-button-count').html('');document.title=initialPageTitle;"><span style="font-size: 20px;padding: 5px;float: left;"><img src="http://ttanttakun.com/js/txat/comments.png"/> Txat</span><span class="txat-button-count"></span></div>
+</div>
+
